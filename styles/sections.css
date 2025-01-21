@@ -2,6 +2,38 @@
     img {
         height: 100%;
         object-fit: cover;
+    }
+
+    /*é o degrade das imagens*/
+    .card {
+
         border-radius: 4px;
+        /*esconde o transbordameto*/
+        overflow: hidden;
+        /* faz o que ta dentro do &::before ficar na area da img*/
+        position: relative;
+
+        /*inicio de uma criacao de um elemnto html em css*/
+        &::before {
+            /*obrigatorio ter um conteudo*/
+            content: '';
+            position: absolute;
+            inset: 0;
+            top: 50%;
+            background: linear-gradient(180deg,
+                    transparent 0%,
+                    #020617);
+        }
+
+        figcaption {
+            position: absolute;
+            bottom: 0;
+
+            padding: 24px;
+
+            h2 {
+                margin-top: 8px;
+            }
+        }
     }
 }
